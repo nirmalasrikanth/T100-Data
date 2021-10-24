@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T100 Queries</title>
+</head>
+<body>
+    <h1>Queries for T-100</h1>
+    <div>
+        <ul>
+            {% comment %} 
+            * What are the top 5 airports in terms of:
+                * Total passengers by origin
+                * Total passengers by destination 
+            {% endcomment %}
+            <li>What are the top 5 airports in terms of:
+                <ul>
+                    <li><a href="{% url 'top5paxorigin' %}">Total passengers by origin</a></li>
+                    <li> <a href="{% url 'top5paxdestination' %}"> Total passengers by destination</a></li>
+                </ul>
+            </li>
+            <li>What are the top 5 airports in terms of:
+                <ul>
+                    <li><a href="{% url 'top5freightorigin' %}">Total freight by origin</a></li>
+                    <li> <a href="{% url 'top5freightdestination' %}"> Total freight by destination</a></li>
+                </ul>
+            </li>            <li>What are the top 5 airports in terms of:
+                <ul>
+                    <li><a href="{% url 'top5mailorigin' %}">Total Mails by origin</a></li>
+                    <li> <a href="{% url 'top5maildestination' %}"> Total Mails by destination</a></li>
+                </ul>
+            </li>
+
+            <li>What are the top 5 airports in terms of:
+                <ul>
+                    <li><a href="{% url 'top5distanceorigin' %}">Total Distance by origin</a></li>
+                    <li> <a href="{% url 'top5distancedestination' %}"> Total Distance by destination</a></li>
+                </ul>
+            </li>
+
+            
+            <li><a href=" {% url 'toppassengers_month' %} ">Which airport reported the most passengers by month?</a></li>
+            <li><a href=" {% url 'topdistance_month' %} ">Which airport reported the longest distance by month?</a></li>
+            <li><a href=" {% url 'maxfreightcarrier' %} ">Which airline reported the most freight carried?</a></li>
+            <li><a href=" {% url 'maxpaxcarrier' %} ">Which airline reported the most passengers carried?</a></li>
+            <li><a href=" {% url 'maxmailcarrier' %} ">Which airline reported the most mail carried?</a></li>
+            <li><a href=" {% url 'maxdistancecarrier' %} ">Which airline reported the longest flight distance?</a></li>
+
+            {% comment %} 
+            * Rank order passengers carried, by month, for these airlines:
+                * AA (American Airlines)
+                * AS (Alaska Airlines)
+                * DL (Delta Airlines)
+                * UA (United Airlines)
+                * WN (Southwest Airlines)
+            {% endcomment %}
+            <li> <a href=" {% url 'maxpaxcarriermonth' %} ">Rank order passengers carried, by month, for these airlines:</a>
+                <ul>
+                    <li>AA (American Airlines)</li>
+                    <li>AS (Alaska Airlines)</li>
+                    <li>DL (Delta Airlines)</li>
+                    <li>UA (United Airlines)</li>
+                    <li>WN (Southwest Airlines)</li>
+                </ul>
+            </li>
+            {% comment %} 
+            * Find the average number of passengers for flights into:
+                * LAX (Los Angeles)
+                * SFO (San Francisco)
+                * DFW (Dallas-Fort Worth)
+                * ATL (Atlanta)
+                * ORD (Chicago)
+            {% endcomment %}
+            <li><a href=" {% url 'avgpaxcarriermonth' %} ">Find the average number of passengers for flights into:</a>
+                <ul>
+                    <li>LAX (Los Angeles)</li>
+                    <li>SFO (San Francisco)</li>
+                    <li>DFW (Dallas-Fort Worth)</li>
+                    <li>ATL (Atlanta)</li>
+                    <li>ORD (Chicago)</li>
+                </ul>
+            </li>
+
+            {% comment %} 
+            * Find the average volume of freight for flights departing:
+                * MIA (Miami)
+                * MEM (Memphis)
+                * JFK (New York JFK)
+                * ANC (Anchorage)
+                * SDF (Louisville) 
+            {% endcomment %}
+            <li><a href=" {% url 'avgfreightcarriermonth' %} "> Find the average volume of freight for flights departing:</a>
+                <ul>
+                    <li>MIA (Miami)</li>
+                    <li>MEM (Memphis)</li>
+                    <li>JFK (New York JFK)</li>
+                    <li>ANC (Anchorage)</li>
+                    <li>SDF (Louisville)</li>
+                </ul>
+            </li>
+            {% comment %} 
+            * What city pairs represent the most freight carried for the longest distance?
+            * What city pairs represent the most mail carried for the shortest distance?
+            {% endcomment %}
+            <li><a href=" {% url 'maxfreightlongestdistance' %} ">What city pairs represent the most freight carried for the longest distance?</a></li>
+            <li><a href=" {% url 'maxmailshortestdistance' %} ">What city pairs represent the most mail carried for the shortest distance?</a></li>
+        </ul>
+    </div>
+</body>
+</html>
